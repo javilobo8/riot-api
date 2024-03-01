@@ -2,6 +2,13 @@
 
 Another Riot API wrapper for Node.js.
 
+## Features
+
+* Fully typed
+* Promise-based
+* Constants
+* Axios based requests
+
 ## Installation
 
 ```bash
