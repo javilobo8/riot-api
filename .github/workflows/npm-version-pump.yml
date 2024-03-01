@@ -1,0 +1,21 @@
+name: Bump Version
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  bump_version:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Automated Version Bump
+      uses: phips28/gh-action-bump-version@v11.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        major-wording: 'MAJOR,cut-major'
+        minor-wording: 'feat,add,Adds,new'
+        patch-wording: 'patch,fixes,fix'
+        rc-wording: 'RELEASE,alpha'
+        commit-message: 'CI: bumps version to {{version}}'
+        check-last-commit-only: 'true'
