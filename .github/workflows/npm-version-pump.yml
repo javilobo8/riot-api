@@ -26,7 +26,7 @@ jobs:
     - name: Bump Version
       uses: phips28/gh-action-bump-version@v11.0.0
       env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         major-wording: "MAJOR,BREAKING CHANGE"
         minor-wording: "feat"
