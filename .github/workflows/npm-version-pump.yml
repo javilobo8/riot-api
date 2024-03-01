@@ -28,9 +28,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       with:
-        major-wording: 'MAJOR,cut-major'
-        minor-wording: 'feat,add,Adds,new'
-        patch-wording: 'patch,fixes,fix'
+        major-wording: "MAJOR,BREAKING CHANGE"
+        minor-wording: "feat"
+        patch-wording: "patch,fix,bugfix,chore"
         rc-wording: 'RELEASE,alpha'
         commit-message: 'CI: bumps version to {{version}}'
-        check-last-commit-only: 'true'
