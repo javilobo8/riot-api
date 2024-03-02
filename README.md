@@ -9,6 +9,12 @@ Another Riot API wrapper for Node.js.
 * Constants
 * Axios based requests
 
+## TODO
+
+* Add DDRAGON Support
+* Add replacement for CDN host
+* Add champions endpoint
+
 ## Installation
 
 ```bash
