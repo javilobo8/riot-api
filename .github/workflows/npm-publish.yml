@@ -3,9 +3,13 @@
 
 name: Publish Node.js Package
 
+# on:
+#   release:
+#     types: [created]
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - dev
 
 jobs:
   test:
