@@ -42,6 +42,8 @@
   },
   "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^11.1.0",
+    "@semantic-release/release-notes-generator": "^12.1.0",
     "@types/node": "^20.11.24",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
