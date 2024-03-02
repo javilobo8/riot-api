@@ -15,4 +15,18 @@ describe('RiotAPILOL', () => {
     expect(riotApi.league).toBeInstanceOf(LOLLeague);
     expect(riotApi.match).toBeInstanceOf(LOLMatch);
   });
+
+  it('should throw an error if no apiKey provided', () => {
+    try {
+      // @ts-expect-error Testing for error
+      new RiotAPILOL({});
+      expect.fail('Should throw an error');
+    } catch (error) {
+      if (error instanceof Error) {
+        expect(error.message).toBe('API key is required');
+      } else {
+        expect.fail('Should throw an error');
+      }
+    }
+  });
 });

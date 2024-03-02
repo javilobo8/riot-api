@@ -9,24 +9,24 @@ import {
 } from './constants';
 
 export class EndpointParser {
-  region(region: Region): RegionHost {
-    if (!REGION_HOST[region]) {
+  region(region: string): RegionHost {
+    if (!REGION_HOST[region as Region]) {
       throw new Error(`Invalid region "${region}"`);
     }
-    return REGION_HOST[region];
+    return REGION_HOST[region as Region];
   }
 
-  cluster(cluster: Cluster): ClusterHost {
-    if (!CLUSTER_HOST[cluster]) {
+  cluster(cluster: string): ClusterHost {
+    if (!CLUSTER_HOST[cluster as Cluster]) {
       throw new Error(`Invalid cluster "${cluster}"`);
     }
-    return CLUSTER_HOST[cluster];
+    return CLUSTER_HOST[cluster as Cluster];
   }
 
-  regionToCluster(region: Region): ClusterHost {
-    if (!REGION_TO_CLUSTER[region]) {
+  regionToCluster(region: string): ClusterHost {
+    if (!REGION_TO_CLUSTER[region as Region]) {
       throw new Error(`Invalid region "${region}"`);
     }
-    return REGION_TO_CLUSTER[region];
+    return REGION_TO_CLUSTER[region as Region];
   }
 }

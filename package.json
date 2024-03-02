@@ -3,6 +3,7 @@
   "version": "1.0.6",
   "description": "Another Riot API Wrapper",
   "main": "./lib/index.js",
+  "type": "module",
   "files": [
     "lib/**/*"
   ],
@@ -11,9 +12,9 @@
     "clean": "rm -rf ./lib/",
     "cm": "cz",
     "lint": "eslint ./src/ --fix",
-    "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test": "vitest run --coverage",
+    "test:watch": "vitest watch",
     "typecheck": "tsc --noEmit"
   },
   "repository": {
@@ -56,7 +57,6 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
-    "husky": "^6.0.0",
     "lint-staged": "^13.2.1",
     "nock": "^13.5.4",
     "prettier": "^2.2.1",

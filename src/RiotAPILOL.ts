@@ -16,6 +16,7 @@ import { LOLMatch } from './services/lol/LOLMatch';
 interface RiotAPILOLOptions {
   apiKey: string;
   httpOptions?: CreateAxiosDefaults;
+  ddragonInsecure?: boolean;
 }
 
 export class RiotAPILOL {
@@ -48,5 +49,3 @@ export class RiotAPILOL {
     this.match = new LOLMatch(this.requestHandler, this.endpointParser);
   }
 }
-
-const api = new RiotAPILOL({ apiKey: '1234151' });
