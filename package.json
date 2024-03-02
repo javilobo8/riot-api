@@ -38,9 +38,9 @@
     "codecov"
   ],
   "bugs": {
-    "url": "https://github.com/ryansonshine/typescript-npm-package-template/issues"
+    "url": "https://github.com/javilobo8/riot-api/issues"
   },
-  "homepage": "https://github.com/ryansonshine/typescript-npm-package-template#readme",
+  "homepage": "https://github.com/javilobo8/riot-api#readme",
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^11.1.0",
     "@semantic-release/github": "^9.2.6",
