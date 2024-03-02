@@ -1,6 +1,5 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { Region } from '../../constants';
 import { LeagueDTO, LeagueEntryDTO } from '../../interfaces/league';
 import { Response } from '../../shared';
 
@@ -13,12 +12,12 @@ export class LOLLeague {
   /**
    * Get the challenger league for given queue.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} queue queue
    * @returns {Promise<Response<LeagueDTO>>}
    */
   public async challengerLeaguesByQueue(
-    region: Region,
+    region: string,
     queue: string
   ): Promise<Response<LeagueDTO>> {
     const host = this.endpointParser.region(region);
@@ -32,12 +31,12 @@ export class LOLLeague {
   /**
    * Get the grandmaster league for given queue.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} queue queue
    * @returns {Promise<Response<LeagueDTO>>}
    */
   public async grandmasterLeaguesByQueue(
-    region: Region,
+    region: string,
     queue: string
   ): Promise<Response<LeagueDTO>> {
     const host = this.endpointParser.region(region);
@@ -51,12 +50,12 @@ export class LOLLeague {
   /**
    * Get the master league for given queue.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} queue queue
    * @returns {Promise<Response<LeagueDTO>>}
    */
   public async masterLeaguesByQueue(
-    region: Region,
+    region: string,
     queue: string
   ): Promise<Response<LeagueDTO>> {
     const host = this.endpointParser.region(region);
@@ -70,12 +69,12 @@ export class LOLLeague {
   /**
    * Get league entries in all queues for a given summoner ID.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} encryptedSummonerId encryptedSummonerId
    * @returns {Promise<Response<LeagueEntryDTO[]>>}
    */
   public async entriesBySummoner(
-    region: Region,
+    region: string,
     encryptedSummonerId: string
   ): Promise<Response<LeagueEntryDTO[]>> {
     const host = this.endpointParser.region(region);
@@ -89,14 +88,14 @@ export class LOLLeague {
   /**
    * Get all the league entries.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} queue queue
    * @param {string} tier tier
    * @param {string} division division
    * @returns {Promise<Response<LeagueEntryDTO[]>>}
    */
   public async entries(
-    region: Region,
+    region: string,
     queue: string,
     tier: string,
     division: string
@@ -112,12 +111,12 @@ export class LOLLeague {
   /**
    * Get league with given ID, including inactive entries.
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} league league
    * @returns {Promise<Response<LeagueDTO>>}
    */
   public async leagues(
-    region: Region,
+    region: string,
     league: string
   ): Promise<Response<LeagueDTO>> {
     const host = this.endpointParser.region(region);

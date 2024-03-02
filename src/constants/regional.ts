@@ -10,6 +10,11 @@ export const REGION = {
   OCE: 'OCE',
   TR: 'TR',
   RU: 'RU',
+  PH: 'PH',
+  SG: 'SG',
+  TH: 'TH',
+  TW: 'TW',
+  VN: 'VN',
 } as const;
 
 export const CLUSTER = {
@@ -33,6 +38,11 @@ export const CPID = {
   OCE: 'OCE',
   OC1: 'OC1',
   JP1: 'JP1',
+  PH2: 'PH2',
+  SG2: 'SG2',
+  TW2: 'TW2',
+  TH2: 'TH2',
+  VN2: 'VN2',
 } as const;
 
 export type Region = typeof REGION[keyof typeof REGION];

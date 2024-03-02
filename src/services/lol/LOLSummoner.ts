@@ -13,12 +13,12 @@ export class LOLSummoner {
   /**
    * Get summoner by Account ID
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} accountId Account ID
    * @returns {Promise<Response<SummonerDTO>>}
    */
   public async byAccount(
-    region: Region,
+    region: string,
     accountId: string
   ): Promise<Response<SummonerDTO>> {
     const host = this.endpointParser.region(region);
@@ -32,12 +32,12 @@ export class LOLSummoner {
   /**
    * Get summoner by puuid
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} puuid account puuid
    * @returns {Promise<Response<SummonerDTO>>}
    */
   public async byPuuid(
-    region: Region,
+    region: string,
     puuid: string
   ): Promise<Response<SummonerDTO>> {
     const host = this.endpointParser.region(region);

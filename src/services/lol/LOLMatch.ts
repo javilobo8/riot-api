@@ -1,6 +1,5 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { Region } from '../../constants';
 import { MatchDTO } from '../../interfaces/match';
 import { Response } from '../../shared';
 
@@ -22,12 +21,12 @@ export class LOLMatch {
   /**
    * Get a list of match ids by puuid
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} puuid puuid
    * @returns {Promise<Response<string[]>>}
    */
   public async matchesList(
-    region: Region,
+    region: string,
     puuid: string,
     params: MatchesByPuuidParams
   ): Promise<Response<string[]>> {
@@ -43,12 +42,12 @@ export class LOLMatch {
   /**
    * Get a match by match id
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} matchId matchId
    * @returns {Promise<Response<MatchDTO>>}
    */
   public async match(
-    region: Region,
+    region: string,
     matchId: string
   ): Promise<Response<MatchDTO>> {
     const host = this.endpointParser.regionToCluster(region);
@@ -62,12 +61,12 @@ export class LOLMatch {
   /**
    * Get a match by match id
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} matchId matchId
    * @returns {Promise<Response<void>>}
    */
   public async matchTimeline(
-    region: Region,
+    region: string,
     matchId: string
   ): Promise<Response<void>> {
     const host = this.endpointParser.regionToCluster(region);

@@ -6,11 +6,11 @@ export class RequestHandler {
   constructor(private client: AxiosInstance) {}
 
   public async request<T>(
-    uri: string,
+    url: string,
     params?: Record<string, string>
   ): Promise<Response<T>> {
     try {
-      const response = await this.client.get<T>(uri, { params });
+      const response = await this.client.get<T>(url, { params });
       return {
         data: response.data,
         status: response.status,

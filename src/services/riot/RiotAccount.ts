@@ -1,6 +1,5 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { Region } from '../../constants';
 import { AccountDTO } from '../../interfaces/account';
 import { Response } from '../../shared';
 
@@ -13,12 +12,12 @@ export class RiotAccount {
   /**
    * Get account by PUUID
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} puuid PUUID of the account
    * @returns {Promise<Response<AccountDTO>>}
    */
   public async byPuuid(
-    region: Region,
+    region: string,
     puuid: string
   ): Promise<Response<AccountDTO>> {
     const host = this.endpointParser.regionToCluster(region);
@@ -32,13 +31,13 @@ export class RiotAccount {
   /**
    * Get account by gameName and tagLine
    *
-   * @param {Region} region region
+   * @param {string} region region
    * @param {string} gameName Game name of the account
    * @param {string} tagLine Tag line of the account
    * @returns {Promise<Response<AccountDTO>>}
    */
   public async byRiotId(
-    region: Region,
+    region: string,
     gameName: string,
     tagLine: string
   ): Promise<Response<AccountDTO>> {

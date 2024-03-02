@@ -12,6 +12,11 @@ export const REGION_HOST: Record<Region, string> = {
   [REGION.OCE]: `https://${CPID.OC1.toLowerCase()}.api.riotgames.com`,
   [REGION.TR]: `https://${CPID.TR1.toLowerCase()}.api.riotgames.com`,
   [REGION.RU]: `https://${CPID.RU.toLowerCase()}.api.riotgames.com`,
+  [REGION.PH]: `https://${CPID.PH2.toLowerCase()}.api.riotgames.com`,
+  [REGION.SG]: `https://${CPID.SG2.toLowerCase()}.api.riotgames.com`,
+  [REGION.TH]: `https://${CPID.TH2.toLowerCase()}.api.riotgames.com`,
+  [REGION.TW]: `https://${CPID.TW2.toLowerCase()}.api.riotgames.com`,
+  [REGION.VN]: `https://${CPID.VN2.toLowerCase()}.api.riotgames.com`,
 } as const;
 
 export const CLUSTER_HOST: Record<Cluster, string> = {
@@ -33,9 +38,14 @@ export const REGION_TO_CLUSTER: Record<
   [REGION.LAN]: CLUSTER_HOST[CLUSTER.AMERICAS],
   [REGION.LAS]: CLUSTER_HOST[CLUSTER.AMERICAS],
   [REGION.NA]: CLUSTER_HOST[CLUSTER.AMERICAS],
-  [REGION.OCE]: CLUSTER_HOST[CLUSTER.SEA],
   [REGION.TR]: CLUSTER_HOST[CLUSTER.EUROPE],
   [REGION.RU]: CLUSTER_HOST[CLUSTER.EUROPE],
+  [REGION.OCE]: CLUSTER_HOST[CLUSTER.SEA],
+  [REGION.PH]: CLUSTER_HOST[CLUSTER.SEA],
+  [REGION.SG]: CLUSTER_HOST[CLUSTER.SEA],
+  [REGION.TH]: CLUSTER_HOST[CLUSTER.SEA],
+  [REGION.TW]: CLUSTER_HOST[CLUSTER.SEA],
+  [REGION.VN]: CLUSTER_HOST[CLUSTER.SEA],
 } as const;
 
 export const CPID_REGION: Record<CPID, Region> = {
@@ -52,6 +62,11 @@ export const CPID_REGION: Record<CPID, Region> = {
   [CPID.OCE]: REGION.OCE,
   [CPID.OC1]: REGION.OCE,
   [CPID.JP1]: REGION.JP,
+  [CPID.PH2]: REGION.PH,
+  [CPID.SG2]: REGION.SG,
+  [CPID.TW2]: REGION.TW,
+  [CPID.TH2]: REGION.TH,
+  [CPID.VN2]: REGION.VN,
 } as const;
 
 export type RegionHost = typeof REGION_HOST[keyof typeof REGION_HOST];
