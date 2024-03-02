@@ -3,6 +3,7 @@
   "version": "1.0.6",
   "description": "Another Riot API Wrapper",
   "main": "./lib/index.js",
+  "type": "module",
   "files": [
     "lib/**/*"
   ],
@@ -14,6 +15,7 @@
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "test": "vitest run --coverage",
+    "test:watch": "vitest watch",
     "typecheck": "tsc --noEmit"
   },
   "repository": {
