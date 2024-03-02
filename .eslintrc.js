@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'node', 'prettier'],
@@ -22,7 +22,13 @@ export default {
     'node/no-missing-require': 'off',
     'node/shebang': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
-    quotes: ['warn', 'single', { avoidEscape: true }],
+    quotes: [
+      'warn',
+      'single',
+      {
+        avoidEscape: true,
+      },
+    ],
     'node/no-unpublished-import': 'off',
     '@typescript-eslint/no-unsafe-assignment': 'off',
     '@typescript-eslint/no-var-requires': 'off',
