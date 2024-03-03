@@ -1,8 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { Region } from '../../constants';
 import { SummonerDTO } from '../../interfaces/summoner';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class LOLSummoner {
   constructor(

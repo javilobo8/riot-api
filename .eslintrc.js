@@ -3,7 +3,7 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint', 'node', 'prettier'],
   parserOptions: {
-    tsconfigRootDir: __dirname,
+    tsconfigRootDir: '.',
     project: ['./tsconfig.json'],
   },
   extends: [
@@ -35,5 +35,14 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/unbound-method': 'off',
+  },
+  settings: {
+    exclude: [
+      'node_modules',
+      'dist',
+      'coverage',
+      '.eslintrc.js',
+      'vitest.config.ts',
+    ],
   },
 };

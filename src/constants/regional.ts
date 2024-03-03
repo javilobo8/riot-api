@@ -45,6 +45,6 @@ export const CPID = {
   VN2: 'VN2',
 } as const;
 
-export type Region = typeof REGION[keyof typeof REGION];
-export type Cluster = typeof CLUSTER[keyof typeof CLUSTER];
-export type CPID = typeof CPID[keyof typeof CPID];
+export type Region = (typeof REGION)[keyof typeof REGION];
+export type Cluster = (typeof CLUSTER)[keyof typeof CLUSTER];
+export type CPID = (typeof CPID)[keyof typeof CPID];

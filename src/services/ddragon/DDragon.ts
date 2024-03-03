@@ -1,6 +1,6 @@
 import { RequestHandler } from '../../RequestHandler';
 import { ChampionsData } from '../../interfaces/ddragon';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class DDragon {
   private readonly host = 'https://ddragon.leagueoflegends.com';

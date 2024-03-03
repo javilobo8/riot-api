@@ -7,7 +7,7 @@ export default defineConfig({
       exclude: [
         '**/node_modules/**',
         '**/lib/**',
-        '**/eslintrc.js',
+        '**/.eslintrc.js',
         '**/src/interfaces/**',
         '**/src/types/**',
       ],
