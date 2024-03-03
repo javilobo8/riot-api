@@ -44,7 +44,7 @@ export class LOLMastery {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<MasteryDTO[]>(
       `${host}/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}/top`,
-      { count: count.toString() }
+      count === 3 ? undefined : { count: count.toString() }
     );
 
     return response;
