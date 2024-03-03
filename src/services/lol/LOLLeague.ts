@@ -79,7 +79,7 @@ export class LOLLeague {
   ): Promise<Response<LeagueEntryDTO[]>> {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<LeagueEntryDTO[]>(
-      `${host}/lol/league/v4/entries/by-queue/${summonerId}`
+      `${host}/lol/league/v4/entries/by-summoner/${summonerId}`
     );
 
     return response;

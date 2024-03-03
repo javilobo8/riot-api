@@ -96,7 +96,7 @@ describe('LOLLeague', () => {
         new EndpointParser()
       );
       nock('https://euw1.api.riotgames.com')
-        .get(`/lol/league/v4/entries/by-queue/${summonerId}`)
+        .get(`/lol/league/v4/entries/by-summoner/${summonerId}`)
         .reply(200, mockResponse);
 
       const response = await lolLeague.entriesBySummoner(region, summonerId);
