@@ -1,7 +1,7 @@
 import { EndpointParser } from './../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { Response } from '../../shared';
 import { MasteryDTO } from '../../interfaces/mastery';
+import { Response } from '../../shared';
 
 export class LOLMastery {
   constructor(
