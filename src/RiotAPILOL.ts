@@ -17,7 +17,6 @@ import { LOLSpectator } from './services/lol/LOLSpectator';
 interface RiotAPILOLOptions {
   apiKey: string;
   httpOptions?: CreateAxiosDefaults;
-  ddragonInsecure?: boolean;
 }
 
 export class RiotAPILOL {
