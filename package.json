@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "description": "Another Riot API Wrapper",
   "main": "./lib/index.js",
-  "type": "module",
+  "type": "commonjs",
   "files": [
     "lib/**/*"
   ],
