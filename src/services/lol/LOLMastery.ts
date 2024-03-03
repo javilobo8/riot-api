@@ -39,7 +39,7 @@ export class LOLMastery {
   public async topMastery(
     region: string,
     puuid: string,
-    count: number = 3
+    count = 3
   ): Promise<Response<MasteryDTO[]>> {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<MasteryDTO[]>(
