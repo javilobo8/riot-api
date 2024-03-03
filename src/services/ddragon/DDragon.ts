@@ -54,7 +54,7 @@ export class DDragon {
    * @returns {Promise<string>}
    */
   public async getChampions(
-    locale: string = 'en_US'
+    locale = 'en_US'
   ): Promise<Response<ChampionsData>> {
     if (
       this.championsResponse &&
