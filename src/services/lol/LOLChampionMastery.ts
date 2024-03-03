@@ -1,7 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
 import { ChampionMasteryDTO } from '../../interfaces/championMastery';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class LOLChampionMastery {
   constructor(
