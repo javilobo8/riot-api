@@ -1,5 +1,5 @@
 import { AxiosError, AxiosInstance } from 'axios';
-import { Response } from './shared';
+import { Response } from './interfaces/shared';
 import { ResponseError } from './errors';
 
 export class RequestHandler {

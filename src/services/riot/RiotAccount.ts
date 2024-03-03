@@ -1,7 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
 import { AccountDTO } from '../../interfaces/account';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class RiotAccount {
   constructor(
