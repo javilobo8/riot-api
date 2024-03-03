@@ -7,20 +7,20 @@ import { RequestHandler } from '../../../src/RequestHandler';
 import { EndpointParser } from '../../../src/EndpointParser';
 import { REGION } from '../../../src';
 
-describe('LOLMastery', () => {
+describe('LOLChampionMastery', () => {
   afterEach(() => {
     nock.cleanAll();
   });
 
   it('should export all services', () => {
-    const lolMastery = new LOLChampionMastery(
+    const lolChampionMastery = new LOLChampionMastery(
       new RequestHandler(axios.create()),
       new EndpointParser()
     );
-    expect(lolMastery.masteries).toBeDefined();
-    expect(lolMastery.masteryByChampionId).toBeDefined();
-    expect(lolMastery.topMastery).toBeDefined();
-    expect(lolMastery.scores).toBeDefined();
+    expect(lolChampionMastery.masteries).toBeDefined();
+    expect(lolChampionMastery.masteryByChampionId).toBeDefined();
+    expect(lolChampionMastery.topMastery).toBeDefined();
+    expect(lolChampionMastery.scores).toBeDefined();
   });
 
   describe('masteries', () => {
@@ -29,7 +29,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLChampionMastery(
+      const lolChampionMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -37,7 +37,7 @@ describe('LOLMastery', () => {
         .get(`/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}`)
         .reply(200, mockResponse);
 
-      const response = await lolMastery.masteries(region, puuid);
+      const response = await lolChampionMastery.masteries(region, puuid);
 
       expect(response.data).toEqual(mockResponse);
     });
@@ -49,7 +49,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLChampionMastery(
+      const lolChampionMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -59,7 +59,7 @@ describe('LOLMastery', () => {
         )
         .reply(200, mockResponse);
 
-      const response = await lolMastery.topMastery(region, puuid);
+      const response = await lolChampionMastery.topMastery(region, puuid);
 
       expect(response.data).toEqual(mockResponse);
     });
@@ -70,7 +70,7 @@ describe('LOLMastery', () => {
       const count = 5;
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLChampionMastery(
+      const lolChampionMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -80,7 +80,11 @@ describe('LOLMastery', () => {
         )
         .reply(200, mockResponse);
 
-      const response = await lolMastery.topMastery(region, puuid, count);
+      const response = await lolChampionMastery.topMastery(
+        region,
+        puuid,
+        count
+      );
 
       expect(response.data).toEqual(mockResponse);
     });
@@ -93,7 +97,7 @@ describe('LOLMastery', () => {
       const championId = 45;
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLChampionMastery(
+      const lolChampionMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -103,7 +107,7 @@ describe('LOLMastery', () => {
         )
         .reply(200, mockResponse);
 
-      const response = await lolMastery.masteryByChampionId(
+      const response = await lolChampionMastery.masteryByChampionId(
         region,
         puuid,
         championId
@@ -119,7 +123,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLChampionMastery(
+      const lolChampionMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -127,7 +131,7 @@ describe('LOLMastery', () => {
         .get(`/lol/champion-mastery/v4/scores/by-puuid/${puuid}`)
         .reply(200, mockResponse);
 
-      const response = await lolMastery.scores(region, puuid);
+      const response = await lolChampionMastery.scores(region, puuid);
 
       expect(response.data).toEqual(mockResponse);
     });
