@@ -11,26 +11,7 @@ export class LOLSummoner {
   ) {}
 
   /**
-   * Get summoner by Account ID
-   *
-   * @param {string} region region
-   * @param {string} accountId Account ID
-   * @returns {Promise<Response<SummonerDTO>>}
-   */
-  public async byAccount(
-    region: string,
-    accountId: string
-  ): Promise<Response<SummonerDTO>> {
-    const host = this.endpointParser.region(region);
-    const response = await this.requestHandler.request<SummonerDTO>(
-      `${host}/lol/summoner/v4/summoners/by-account/${accountId}`
-    );
-
-    return response;
-  }
-
-  /**
-   * Get summoner by puuid
+   * Get a summoner by PUUID.
    *
    * @param {string} region region
    * @param {string} puuid account puuid
@@ -43,6 +24,25 @@ export class LOLSummoner {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<SummonerDTO>(
       `${host}/lol/summoner/v4/summoners/by-puuid/${puuid}`
+    );
+
+    return response;
+  }
+
+  /**
+   * Get a summoner by summoner ID
+   *
+   * @param {string} region region
+   * @param {string} summonerId summoner ID
+   * @returns {Promise<Response<SummonerDTO>>}
+   */
+  public async byId(
+    region: string,
+    summonerId: string
+  ): Promise<Response<SummonerDTO>> {
+    const host = this.endpointParser.region(region);
+    const response = await this.requestHandler.request<SummonerDTO>(
+      `${host}/lol/summoner/v4/summoners/${summonerId}`
     );
 
     return response;

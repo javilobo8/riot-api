@@ -61,4 +61,43 @@ describe('DDragon', () => {
       expect(calls).toBe(1);
     });
   });
+
+  describe('getChampions', () => {
+    it('should return the current champions', async () => {
+      const ddragon = new DDragon(new RequestHandler(axios.create()));
+      const locale = 'en_US';
+      const cdnVersion = '11.1.1';
+      nock(ddragon['host']).get('/api/versions.json').reply(200, [cdnVersion]);
+
+      nock(ddragon['host'])
+        .get(`/cdn/${cdnVersion}/data/${locale}/champion.json`)
+        .reply(200, { champion: 'champion' });
+
+      const championsResponse = await ddragon.getChampions();
+
+      expect(championsResponse.data).toEqual({ champion: 'champion' });
+    });
+
+    it('should not call the endpoint twice', async () => {
+      let calls = 0;
+      const ddragon = new DDragon(new RequestHandler(axios.create()));
+
+      const locale = 'en_US';
+      const cdnVersion = '11.1.1';
+      nock(ddragon['host']).get('/api/versions.json').reply(200, [cdnVersion]);
+
+      nock(ddragon['host'])
+        .get(`/cdn/${cdnVersion}/data/${locale}/champion.json`)
+        .reply(200, () => {
+          calls++;
+          return { champion: 'champion' };
+        });
+
+      await ddragon.getChampions();
+      const championsResponse = await ddragon.getChampions();
+
+      expect(championsResponse.data).toEqual({ champion: 'champion' });
+      expect(calls).toBe(1);
+    });
+  });
 });

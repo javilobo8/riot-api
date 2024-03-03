@@ -1,4 +1,5 @@
 import { RequestHandler } from '../../RequestHandler';
+import { ChampionsData } from '../../interfaces/ddragon';
 import { Response } from '../../shared';
 
 export class DDragon {
@@ -7,6 +8,10 @@ export class DDragon {
   private versionsResponse?: Response<string[]>;
   private versionsDate: Date = new Date(0);
   private readonly versionsExpire: number = 1000 * 60 * 60; // 1h
+
+  private championsResponse?: Response<ChampionsData>;
+  private championsDate: Date = new Date(0);
+  private readonly championsExpire: number = 1000 * 60 * 60; // 1h
 
   constructor(private readonly requestHandler: RequestHandler) {}
 
@@ -41,5 +46,31 @@ export class DDragon {
     this.versionsDate = new Date();
 
     return response;
+  }
+
+  /**
+   * Get champions
+   *
+   * @returns {Promise<string>}
+   */
+  public async getChampions(
+    locale: string = 'en_US'
+  ): Promise<Response<ChampionsData>> {
+    if (
+      this.championsResponse &&
+      new Date().getTime() - this.championsDate.getTime() < this.championsExpire
+    ) {
+      return this.championsResponse;
+    }
+
+    const cdnVersion = await this.getCurrentVersion();
+    const response = await this.requestHandler.request<ChampionsData>(
+      `${this.host}/cdn/${cdnVersion}/data/${locale}/champion.json`
+    );
+
+    this.championsResponse = response;
+    this.championsDate = new Date();
+
+    return this.championsResponse;
   }
 }

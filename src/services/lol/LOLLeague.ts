@@ -70,16 +70,16 @@ export class LOLLeague {
    * Get league entries in all queues for a given summoner ID.
    *
    * @param {string} region region
-   * @param {string} encryptedSummonerId encryptedSummonerId
+   * @param {string} summonerId summoner ID
    * @returns {Promise<Response<LeagueEntryDTO[]>>}
    */
   public async entriesBySummoner(
     region: string,
-    encryptedSummonerId: string
+    summonerId: string
   ): Promise<Response<LeagueEntryDTO[]>> {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<LeagueEntryDTO[]>(
-      `${host}/lol/league/v4/entries/by-queue/${encryptedSummonerId}`
+      `${host}/lol/league/v4/entries/by-queue/${summonerId}`
     );
 
     return response;

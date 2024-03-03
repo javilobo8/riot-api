@@ -11,9 +11,8 @@ Another Riot API wrapper for Node.js.
 
 ## TODO
 
-* Add DDRAGON Support
-* Add replacement for CDN host
-* Add champions endpoint
+* Add replacement for DDragon CDN host
+* Add Redis cache
 
 ## Installation
 
