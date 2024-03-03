@@ -1,9 +1,9 @@
-import { EndpointParser } from './../../EndpointParser';
+import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
-import { MasteryDTO } from '../../interfaces/mastery';
+import { ChampionMasteryDTO } from '../../interfaces/championMastery';
 import { Response } from '../../shared';
 
-export class LOLMastery {
+export class LOLChampionMastery {
   constructor(
     private readonly requestHandler: RequestHandler,
     private readonly endpointParser: EndpointParser
@@ -19,9 +19,9 @@ export class LOLMastery {
   public async masteries(
     region: string,
     puuid: string
-  ): Promise<Response<MasteryDTO[]>> {
+  ): Promise<Response<ChampionMasteryDTO[]>> {
     const host = this.endpointParser.region(region);
-    const response = await this.requestHandler.request<MasteryDTO[]>(
+    const response = await this.requestHandler.request<ChampionMasteryDTO[]>(
       `${host}/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}`
     );
 
@@ -40,9 +40,9 @@ export class LOLMastery {
     region: string,
     puuid: string,
     count = 3
-  ): Promise<Response<MasteryDTO[]>> {
+  ): Promise<Response<ChampionMasteryDTO[]>> {
     const host = this.endpointParser.region(region);
-    const response = await this.requestHandler.request<MasteryDTO[]>(
+    const response = await this.requestHandler.request<ChampionMasteryDTO[]>(
       `${host}/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}/top`,
       count === 3 ? undefined : { count: count.toString() }
     );
@@ -62,9 +62,9 @@ export class LOLMastery {
     region: string,
     puuid: string,
     championId: number
-  ): Promise<Response<MasteryDTO>> {
+  ): Promise<Response<ChampionMasteryDTO>> {
     const host = this.endpointParser.region(region);
-    const response = await this.requestHandler.request<MasteryDTO>(
+    const response = await this.requestHandler.request<ChampionMasteryDTO>(
       `${host}/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}/by-champion/${championId}`
     );
 

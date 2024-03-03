@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import axios from 'axios';
 import nock from 'nock';
 
-import { LOLMastery } from '../../../src/services/lol/LOLMastery';
+import { LOLChampionMastery } from '../../../src/services/lol/LOLChampionMastery';
 import { RequestHandler } from '../../../src/RequestHandler';
 import { EndpointParser } from '../../../src/EndpointParser';
 import { REGION } from '../../../src';
@@ -13,7 +13,7 @@ describe('LOLMastery', () => {
   });
 
   it('should export all services', () => {
-    const lolMastery = new LOLMastery(
+    const lolMastery = new LOLChampionMastery(
       new RequestHandler(axios.create()),
       new EndpointParser()
     );
@@ -29,7 +29,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLMastery(
+      const lolMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -49,7 +49,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLMastery(
+      const lolMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -70,7 +70,7 @@ describe('LOLMastery', () => {
       const count = 5;
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLMastery(
+      const lolMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -93,7 +93,7 @@ describe('LOLMastery', () => {
       const championId = 45;
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLMastery(
+      const lolMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );
@@ -119,7 +119,7 @@ describe('LOLMastery', () => {
       const puuid = 'test-puuid';
       const mockResponse = { message: 'OK' };
 
-      const lolMastery = new LOLMastery(
+      const lolMastery = new LOLChampionMastery(
         new RequestHandler(axios.create()),
         new EndpointParser()
       );

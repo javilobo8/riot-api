@@ -11,7 +11,7 @@ import { LOLSummoner } from './services/lol/LOLSummoner';
 import { LOLLeague } from './services/lol/LOLLeague';
 import { LOLMatch } from './services/lol/LOLMatch';
 import { LOLSpectator } from './services/lol/LOLSpectator';
-import { LOLMastery } from './services/lol/LOLMastery';
+import { LOLChampionMastery } from './services/lol/LOLChampionMastery';
 
 // Teamfight Tactics
 
@@ -30,7 +30,7 @@ export class RiotAPILOL {
   public league: LOLLeague;
   public match: LOLMatch;
   public spectator: LOLSpectator;
-  public mastery: LOLMastery;
+  public championMastery: LOLChampionMastery;
 
   constructor(private options: RiotAPILOLOptions) {
     if (!options.apiKey) {
@@ -51,6 +51,9 @@ export class RiotAPILOL {
     this.league = new LOLLeague(this.requestHandler, this.endpointParser);
     this.match = new LOLMatch(this.requestHandler, this.endpointParser);
     this.spectator = new LOLSpectator(this.requestHandler, this.endpointParser);
-    this.mastery = new LOLMastery(this.requestHandler, this.endpointParser);
+    this.championMastery = new LOLChampionMastery(
+      this.requestHandler,
+      this.endpointParser
+    );
   }
 }

@@ -6,7 +6,7 @@ import { LOLMatch } from '../src/services/lol/LOLMatch';
 import { LOLSummoner } from '../src/services/lol/LOLSummoner';
 import { RiotAccount } from '../src/services/riot/RiotAccount';
 import { LOLSpectator } from '../src/services/lol/LOLSpectator';
-import { LOLMastery } from '../src/services/lol/LOLMastery';
+import { LOLChampionMastery } from '../src/services/lol/LOLChampionMastery';
 
 describe('RiotAPILOL', () => {
   it('should export all services', () => {
@@ -17,7 +17,7 @@ describe('RiotAPILOL', () => {
     expect(riotApi.league).toBeInstanceOf(LOLLeague);
     expect(riotApi.match).toBeInstanceOf(LOLMatch);
     expect(riotApi.spectator).toBeInstanceOf(LOLSpectator);
-    expect(riotApi.mastery).toBeInstanceOf(LOLMastery);
+    expect(riotApi.championMastery).toBeInstanceOf(LOLChampionMastery);
   });
 
   it('should throw an error if no apiKey provided', () => {

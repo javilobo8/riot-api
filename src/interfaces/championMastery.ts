@@ -1,4 +1,4 @@
-export interface MasteryDTO {
+export interface ChampionMasteryDTO {
   puuid: string;
   championId: number;
   championLevel: number;
