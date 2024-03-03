@@ -1,7 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
 import { LeagueDTO, LeagueEntryDTO } from '../../interfaces/league';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class LOLLeague {
   constructor(

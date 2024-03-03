@@ -1,7 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
 import { MatchDTO } from '../../interfaces/match';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 interface MatchesByPuuidParams {
   startTime?: number; // Epoch timestamp in seconds. The matchlist started storing timestamps on June 16th, 2021. Any matches played before June 16th, 2021 won't be included in the results if the startTime filter is set.

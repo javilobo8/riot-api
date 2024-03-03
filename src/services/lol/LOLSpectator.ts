@@ -1,7 +1,7 @@
 import { EndpointParser } from '../../EndpointParser';
 import { RequestHandler } from '../../RequestHandler';
 import { CurrentGameInfo } from '../../interfaces/spectator';
-import { Response } from '../../shared';
+import { Response } from '../../interfaces/shared';
 
 export class LOLSpectator {
   constructor(

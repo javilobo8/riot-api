@@ -28,7 +28,7 @@ export const CLUSTER_HOST: Record<Cluster, string> = {
 
 export const REGION_TO_CLUSTER: Record<
   Region,
-  typeof CLUSTER_HOST[keyof typeof CLUSTER_HOST]
+  (typeof CLUSTER_HOST)[keyof typeof CLUSTER_HOST]
 > = {
   [REGION.BR]: CLUSTER_HOST[CLUSTER.AMERICAS],
   [REGION.EUNE]: CLUSTER_HOST[CLUSTER.EUROPE],
@@ -69,7 +69,7 @@ export const CPID_REGION: Record<CPID, Region> = {
   [CPID.VN2]: REGION.VN,
 } as const;
 
-export type RegionHost = typeof REGION_HOST[keyof typeof REGION_HOST];
-export type ClusterHost = typeof CLUSTER_HOST[keyof typeof CLUSTER_HOST];
+export type RegionHost = (typeof REGION_HOST)[keyof typeof REGION_HOST];
+export type ClusterHost = (typeof CLUSTER_HOST)[keyof typeof CLUSTER_HOST];
 export type RegionToCluster =
-  typeof REGION_TO_CLUSTER[keyof typeof REGION_TO_CLUSTER];
+  (typeof REGION_TO_CLUSTER)[keyof typeof REGION_TO_CLUSTER];
