@@ -10,6 +10,7 @@ import { RiotAccount } from './services/riot/RiotAccount';
 import { LOLSummoner } from './services/lol/LOLSummoner';
 import { LOLLeague } from './services/lol/LOLLeague';
 import { LOLMatch } from './services/lol/LOLMatch';
+import { LOLSpectator } from './services/lol/LOLSpectator';
 
 // Teamfight Tactics
 
@@ -28,6 +29,7 @@ export class RiotAPILOL {
   public summoner: LOLSummoner;
   public league: LOLLeague;
   public match: LOLMatch;
+  public spectator: LOLSpectator;
 
   constructor(private options: RiotAPILOLOptions) {
     if (!options.apiKey) {
@@ -47,5 +49,6 @@ export class RiotAPILOL {
     this.summoner = new LOLSummoner(this.requestHandler, this.endpointParser);
     this.league = new LOLLeague(this.requestHandler, this.endpointParser);
     this.match = new LOLMatch(this.requestHandler, this.endpointParser);
+    this.spectator = new LOLSpectator(this.requestHandler, this.endpointParser);
   }
 }

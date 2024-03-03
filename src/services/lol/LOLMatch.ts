@@ -28,7 +28,7 @@ export class LOLMatch {
   public async matchesList(
     region: string,
     puuid: string,
-    params: MatchesByPuuidParams
+    params: MatchesByPuuidParams = {}
   ): Promise<Response<string[]>> {
     const host = this.endpointParser.regionToCluster(region);
     const response = await this.requestHandler.request<string[]>(
@@ -71,7 +71,7 @@ export class LOLMatch {
   ): Promise<Response<void>> {
     const host = this.endpointParser.regionToCluster(region);
     const response = await this.requestHandler.request<void>(
-      `${host}/lol/match/v5/matches/${matchId}`
+      `${host}/lol/match/v5/matches/${matchId}/timeline`
     );
 
     return response;

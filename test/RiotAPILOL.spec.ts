@@ -5,6 +5,7 @@ import { LOLLeague } from '../src/services/lol/LOLLeague';
 import { LOLMatch } from '../src/services/lol/LOLMatch';
 import { LOLSummoner } from '../src/services/lol/LOLSummoner';
 import { RiotAccount } from '../src/services/riot/RiotAccount';
+import { LOLSpectator } from '../src/services/lol/LOLSpectator';
 
 describe('RiotAPILOL', () => {
   it('should export all services', () => {
@@ -14,6 +15,7 @@ describe('RiotAPILOL', () => {
     expect(riotApi.summoner).toBeInstanceOf(LOLSummoner);
     expect(riotApi.league).toBeInstanceOf(LOLLeague);
     expect(riotApi.match).toBeInstanceOf(LOLMatch);
+    expect(riotApi.spectator).toBeInstanceOf(LOLSpectator);
   });
 
   it('should throw an error if no apiKey provided', () => {
