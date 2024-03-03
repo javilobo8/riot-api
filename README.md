@@ -19,6 +19,7 @@ Another Riot API wrapper for Node.js.
 
 * Add replacement for DDragon CDN host
 * Add Redis cache
+* Parse response and error Rate Limit headers
 
 ## Installation
 
