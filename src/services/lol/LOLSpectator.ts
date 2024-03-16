@@ -12,6 +12,7 @@ export class LOLSpectator {
   /**
    * Get current game information for the given summoner ID
    *
+   * @deprecated Use byPuuid instead
    * @param {string} region region
    * @param {string} summonerId summoner ID
    * @returns {Promise<Response<CurrentGameInfo>>}
@@ -23,6 +24,25 @@ export class LOLSpectator {
     const host = this.endpointParser.region(region);
     const response = await this.requestHandler.request<CurrentGameInfo>(
       `${host}/lol/spectator/v4/active-games/by-summoner/${summonerId}`
+    );
+
+    return response;
+  }
+
+  /**
+   * Get current game information for the given puuid
+   *
+   * @param {string} region region
+   * @param {string} puuid puuid
+   * @returns {Promise<Response<CurrentGameInfo>>}
+   */
+  public async byPuuid(
+    region: string,
+    puuid: string
+  ): Promise<Response<CurrentGameInfo>> {
+    const host = this.endpointParser.region(region);
+    const response = await this.requestHandler.request<CurrentGameInfo>(
+      `${host}/lol/spectator/v5/active-games/by-summoner/${puuid}`
     );
 
     return response;

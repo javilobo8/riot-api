@@ -73,6 +73,14 @@ const versionResponse = await ddragonApi.ddragon.getCurrentVersion();
 */
 ```
 
+## Debugging
+
+This package uses the `debug` package to log debug messages. To enable debug messages, set the `DEBUG` environment variable to `riot-api:*`.
+
+```bash
+DEBUG=riot-api:* node your-app.js
+```
+
 Base package: [@javilobo8/riot-api](https://github.com/javilobo8/riot-api)
 
 [build-img]:https://github.com/javilobo8/riot-api/actions/workflows/release.yml/badge.svg
