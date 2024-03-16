@@ -1,6 +1,6 @@
 {
   "name": "@javilobo8/riot-api",
-  "version": "1.5.0",
+  "version": "1.7.0",
   "description": "Another Riot API Wrapper",
   "main": "./lib/index.js",
   "type": "commonjs",
