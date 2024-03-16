@@ -35,6 +35,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/unbound-method': 'off',
+    '@typescript-eslint/no-unsafe-call': 'off',
   },
   settings: {
     exclude: [

@@ -1,5 +1,7 @@
 import { AxiosInstance, CreateAxiosDefaults, default as axios } from 'axios';
 
+import { createDebug } from './utils/debug';
+
 import { RequestHandler } from './RequestHandler';
 import { EndpointParser } from './EndpointParser';
 
@@ -14,6 +16,8 @@ import { LOLSpectator } from './services/lol/LOLSpectator';
 import { LOLChampionMastery } from './services/lol/LOLChampionMastery';
 
 // Teamfight Tactics
+
+const debug = createDebug('RiotAPILOL');
 
 interface RiotAPILOLOptions {
   apiKey: string;
@@ -55,5 +59,7 @@ export class RiotAPILOL {
       this.requestHandler,
       this.endpointParser
     );
+
+    debug('Initialized RiotAPILOL');
   }
 }
